@@ -1,12 +1,23 @@
 import { Route, Routes } from "react-router-dom";
+import './styles/global.css';
 
+import Header from "./components/Header";
+import UserSignUp from "./components/UserSignUp";
+import UserSignIn from "./components/UserSignIn";
+import UserSignOut from "./components/UserSignOut";
+import Courses from "./components/Courses";
 
 function App() {
+
   return (
     <div className="App">
-      <Routes>
-        <Route path= "/" element= "http://localhost:5000/api/courses" />
-      </Routes>
+      <Header />
+        <Routes>
+          <Route path="/" element={<Courses />} />
+          <Route path="/signup" element={<UserSignUp />} />
+          <Route path="/signin" element={<UserSignIn />} />
+          <Route path="/signout" element={<UserSignOut />} />
+        </Routes>
     </div>
   );
 }
