@@ -4,6 +4,7 @@ import UserContext from "../context/UserContext";
 
 const Header = () => {
   const { authUser } = useContext(UserContext);
+  console.log(authUser.lastName)
   return (
     <header>
             <div className="wrap header--flex">
@@ -11,7 +12,7 @@ const Header = () => {
                 <nav>
                     {authUser ? (
                         <ul className="header--signedin">
-                            <li>Welcome, {authUser.firstName}</li>
+                            <li>Welcome, {authUser.firstName} </li>
                             <li><Link to="/signout">Sign Out</Link></li>
                         </ul>
                     ) : (

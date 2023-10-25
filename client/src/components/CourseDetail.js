@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { NavLink, Link, useNavigate, useParams } from "react-router-dom";
+import {Link, useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown"
 
 import UserContext from '../context/UserContext';
