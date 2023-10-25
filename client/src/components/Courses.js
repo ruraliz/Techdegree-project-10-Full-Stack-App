@@ -20,8 +20,8 @@ const Courses = () => {
         fetchData()
     }, [navigate]);
 
-    return(
-        <div className= "wrap main-grid">
+    return (
+        <div className="wrap main-grid">
             {courses.map(course => {
                 return (
                     <NavLink className="course--module course--link" to={`/courses/${course.id}`} key={course.id}>

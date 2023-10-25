@@ -8,12 +8,12 @@ html {
 body {
     font-family: 'Work Sans', sans-serif;
 }
-h2 {
+.h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
-p {
+.p {
     font-weight: 300;
     margin-bottom: 1.5rem;
     line-height: 1.5;
@@ -40,7 +40,7 @@ header {
     align-items: center;
 }
 .header--logo a {
-    font-size: 1.25rem;
+    font-size: .25rem;
     color: #fff;
 }
 header li {
