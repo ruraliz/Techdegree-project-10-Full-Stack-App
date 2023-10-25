@@ -11,8 +11,9 @@ const router = express.Router();
 // Route that returns a list of users.
 router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
     const user = req.currentUser;
-    res.status(200).json({ id: user.id, name: user.firstName, lastName: user.lastName, emailAddress: user.emailAddress});
+    res.status(200).json({ id: user.id, firstName: user.firstName, lastName: user.lastName, emailAddress: user.emailAddress});
   }));
+  
 
 // Route that creates a new user.
 router.post('/users', asyncHandler(async (req, res) => {

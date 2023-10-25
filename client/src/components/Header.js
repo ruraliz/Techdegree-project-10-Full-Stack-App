@@ -4,7 +4,7 @@ import UserContext from "../context/UserContext";
 
 const Header = () => {
   const { authUser } = useContext(UserContext);
-  console.log(authUser.lastName)
+  console.log(authUser)
   return (
     <header>
             <div className="wrap header--flex">

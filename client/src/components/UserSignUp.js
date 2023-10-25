@@ -26,7 +26,6 @@ const UserSignUp = () => {
         emailAddress: emailAddress.current.value,
         password: password.current.value,
     }
-
     try {
       const response = await api("/users", "POST", user);
       if (response.status === 201) {
@@ -41,7 +40,7 @@ const UserSignUp = () => {
       }
     } catch (error) {
       console.log(error);
-      navigate("/error");
+      navigate("/");
     }
   }
 
@@ -49,7 +48,6 @@ const UserSignUp = () => {
     event.preventDefault();
     navigate("/");
   }
-
   return (
     <div className="form--centered">
         <h2>Sign Up</h2>
