@@ -47,7 +47,7 @@ const UserSignIn = () => {
 
   return (
     <div className="form--centered">
-        <h2 className='h2'>Sign In</h2>
+        <h2>Sign In</h2>
         <ErrorsDisplay errors={errors} />
         <form onSubmit={handleSubmit}>
             <label htmlFor="emailAddress">Email Address</label> <input id="emailAddress" name="emailAddress" type="email" ref={emailAddress}/>

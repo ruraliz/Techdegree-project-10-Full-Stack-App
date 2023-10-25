@@ -52,8 +52,7 @@ const UserSignUp = () => {
 
   return (
     <div className="form--centered">
-        <h2 className='h2'>Sign Up</h2>
-        
+        <h2>Sign Up</h2>
         <ErrorsDisplay errors={errors} />
         <form onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name</label> <input id="firstName" name="firstName" type="text" ref={firstName} />
@@ -62,7 +61,7 @@ const UserSignUp = () => {
             <label htmlFor="password">Password</label> <input id="password" name="password" type="password" ref={password} />
             <button className="button" type="submit">Sign Up</button> <button className="button button-secondary" onClick={handleCancel}>Cancel</button>
         </form>
-        <p className='p'>Already have a user account? Click here to <Link to="/signin">sign in</Link>!</p>
+        <p>Already have a user account? Click here to <Link to="/signin">sign in</Link>!</p>
     </div>
   );
 }
