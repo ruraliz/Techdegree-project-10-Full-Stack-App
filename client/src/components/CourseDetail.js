@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import {Link, useNavigate, useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown"
+import ReactMarkdown from 'react-markdown'
 
 import UserContext from '../context/UserContext';
 const CourseDetail = () => {
@@ -80,17 +80,15 @@ const CourseDetail = () => {
                                     <p>{course.estimatedTime}</p>
                                     <h3 className="course--detail--title">Materials Needed</h3>
                                     <ul className="course--detail--list">
-                                        <ReactMarkdown children={course.materialsNeeded}>
-                                        </ReactMarkdown>
+                                        <ReactMarkdown children={course.materialsNeeded}></ReactMarkdown>
                                     </ul>
-
                                 </div>
                             </div>
                         </form>
                     </div>
                 </>
             ) : (
-                <p>course is null...</p>
+                null
             )}
         </>
     )

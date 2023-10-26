@@ -63,7 +63,7 @@ const CreateCourse = () => {
                     </div>
                     <div>
                         <label htmlFor="estimatedTime">Estimated Time</label> <input id="estimatedTime" name="estimatedTime" type="text" ref={estimatedTime}/>
-                        <label htmlFor="materialsNeeded">Materials Needed</label> <textarea id="materialsNeeded" name="materialsNeeded"ref={materialsNeeded}></textarea>
+                        <label htmlFor="materialsNeeded">Materials Needed</label> <textarea id="materialsNeeded" name="materialsNeeded"ref={materialsNeeded}/>
                     </div>
                 </div>
                 <button className="button" type="submit">Create Course</button>

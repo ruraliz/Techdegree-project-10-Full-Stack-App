@@ -32,7 +32,7 @@ const UpdateCourse = () => {
                 }
             } catch (error) {
                 console.log("Error fetching and parsing data", error);
-                navigate("error")
+                navigate("/notfound")
             }
         }
         fetchData()
@@ -74,7 +74,6 @@ const UpdateCourse = () => {
         e.preventDefault();
         navigate("/");
     }
-    console.log(authUser)
     return(
         <div className="wrap">
             <h2>Update Course</h2>
