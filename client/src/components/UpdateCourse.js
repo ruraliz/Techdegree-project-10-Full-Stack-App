@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ErrorsDisplay from "./ErrorsDisplay";
-// import axios from "axios";
+import axios from "axios";
 
 
 import UserContext from "../context/UserContext";
@@ -10,7 +10,7 @@ const UpdateCourse = () => {
     const { authUser } = useContext(UserContext)
     const navigate = (useNavigate());
     const courseId = useParams()
-    // const [course, setCourse] = useState(null);
+    const [course, setCourse] = useState(null);
     const [errors, setErrors] = useState([]);
 
     const [courseTitle, setCourseTitle] = useState("");
@@ -18,27 +18,27 @@ const UpdateCourse = () => {
     const [estimatedTime, setEstimatedTime] = useState("");
     const [materialsNeeded, setMaterialsNeeded] = useState("");
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             const response = await axios.get(`http://localhost:5000/api/courses/${courseId.id}`)
-    //             const fetchCourse = response.data
-    //             if (response.data.courseUser.id !== authUser.id) {
-    //                 navigate("/forbidden");
-    //             } else {
-    //                 setCourse(response);
-    //                 setCourseTitle(fetchCourse.title);
-    //                 setCourseDescription(fetchCourse.description);
-    //                 setEstimatedTime(fetchCourse.estimatedTime);
-    //                 setMaterialsNeeded(fetchCourse.materialsNeeded);
-    //             }
-    //         } catch (error) {
-    //             console.log("Error fetching and parsing data", error);
-    //             navigate("error")
-    //         }
-    //     }
-    //     fetchData()
-    // }, [courseId, authUser, navigate]);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`http://localhost:5000/api/courses/${courseId.id}`)
+                const fetchCourse = response.data
+                if (response.data.courseUser.id !== authUser.id) {
+                    navigate("/forbidden");
+                } else {
+                    setCourse(response);
+                    setCourseTitle(fetchCourse.title);
+                    setCourseDescription(fetchCourse.description);
+                    setEstimatedTime(fetchCourse.estimatedTime);
+                    setMaterialsNeeded(fetchCourse.materialsNeeded);
+                }
+            } catch (error) {
+                console.log("Error fetching and parsing data", error);
+                navigate("error")
+            }
+        }
+        fetchData()
+    }, [courseId, authUser, navigate]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -101,3 +101,5 @@ const UpdateCourse = () => {
     )
 }
 export default UpdateCourse
+
+

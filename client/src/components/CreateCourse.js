@@ -18,8 +18,8 @@ const CreateCourse = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         const course = {
-            courseTitle: courseTitle.current.value,
-            courseDescription: courseDescription.current.value,
+            title: courseTitle.current.value,
+            description: courseDescription.current.value,
             estimatedTime: estimatedTime.current.value,
             materialsNeeded: materialsNeeded.current.value,
             userId: authUser.id
