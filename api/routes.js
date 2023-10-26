@@ -13,7 +13,6 @@ router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
     const user = req.currentUser;
     res.status(200).json({ id: user.id, firstName: user.firstName, lastName: user.lastName, emailAddress: user.emailAddress});
   }));
-  
 
 // Route that creates a new user.
 router.post('/users', asyncHandler(async (req, res) => {
@@ -32,7 +31,7 @@ router.post('/users', asyncHandler(async (req, res) => {
 // Route that returns a list of courses.
 router.get('/courses', asyncHandler(async (req, res) => {
     const courses = await Course.findAll({
-        attributes: ['id','title', 'description', 'estimatedTime', 'materialsNeeded', 'userId'], 
+        attributes: ['id', 'title', 'description', 'estimatedTime', 'materialsNeeded', 'userId'], 
         include:[
             {
                 model: User,

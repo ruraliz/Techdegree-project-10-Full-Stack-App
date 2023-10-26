@@ -9,6 +9,7 @@ import CourseDetail from "./components/CourseDetail";
 import CreateCourse from "./components/CreateCourse"
 import PrivateRoute from "./components/PrivateRoute";
 import NotFound from "./components/Notfound";
+import UpdateCourse from "./components/UpdateCourse";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signout" element={<UserSignOut />} />
           <Route element={<PrivateRoute />}>
             <Route path="/courses/create" element={<CreateCourse />} />
+            <Route path="/courses/:id/update" element={<UpdateCourse />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

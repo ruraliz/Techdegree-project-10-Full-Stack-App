@@ -49,7 +49,6 @@ const CourseDetail = () => {
 
         }
     }
-console.log(authUser.lastName)
     return (
         <>
             {course ? (
