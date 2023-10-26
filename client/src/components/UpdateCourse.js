@@ -10,7 +10,6 @@ const UpdateCourse = () => {
     const { authUser } = useContext(UserContext)
     const navigate = (useNavigate());
     const courseId = useParams()
-    const [course, setCourse] = useState(null);
     const [errors, setErrors] = useState([]);
 
     const [courseTitle, setCourseTitle] = useState("");
@@ -26,7 +25,6 @@ const UpdateCourse = () => {
                 if (response.data.courseUser.id !== authUser.id) {
                     navigate("/forbidden");
                 } else {
-                    setCourse(response);
                     setCourseTitle(fetchCourse.title);
                     setCourseDescription(fetchCourse.description);
                     setEstimatedTime(fetchCourse.estimatedTime);
