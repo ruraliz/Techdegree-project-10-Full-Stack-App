@@ -23,7 +23,7 @@ const UpdateCourse = () => {
             try {
                 const response = await axios.get(`http://localhost:5000/api/courses/${courseId.id}`)
                 const fetchCourse = response.data
-                if (response.data.courseUser.id !== authUser.userId) {
+                if (response.data.courseUser.id !== authUser.id) {
                     navigate("/forbidden");
                 } else {
                     setCourse(response);
@@ -34,7 +34,7 @@ const UpdateCourse = () => {
                 }
             } catch (error) {
                 console.log("Error fetching and parsing data", error);
-                navigate("*")
+                navigate("error")
             }
         }
         fetchData()
@@ -76,6 +76,7 @@ const UpdateCourse = () => {
         e.preventDefault();
         navigate("/");
     }
+    console.log(authUser)
     return(
         <div className="wrap">
             <h2>Update Course</h2>

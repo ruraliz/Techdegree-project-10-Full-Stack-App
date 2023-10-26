@@ -18,11 +18,11 @@ const CreateCourse = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         const course = {
-            title: courseTitle.current.value,
-            description: courseDescription.current.value,
+            courseTitle: courseTitle.current.value,
+            courseDescription: courseDescription.current.value,
             estimatedTime: estimatedTime.current.value,
             materialsNeeded: materialsNeeded.current.value,
-            userId: authUser.userId
+            userId: authUser.id
         }
         const encodedCredentials = btoa(`${authUser.emailAddress}:${authUser.password}`);
         const fetchOptions = {

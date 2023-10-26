@@ -16,13 +16,13 @@ const CourseDetail = () => {
                 const response = await axios.get(`http://localhost:5000/api/courses/${courseId.id}`)
                 const fetchCourse = response.data
                 if (!fetchCourse) {
-                    navigate('/notFound')
+                    navigate("*")
                 } else {
                     setCourse(fetchCourse)
                 }
             } catch (error) {
                 console.log("Error fetching and parsing data", error);
-                navigate("*")
+                navigate("/error")
             }
 
         }
@@ -55,9 +55,9 @@ const CourseDetail = () => {
                 <>
                     <div className="actions--bar">
                         <div className="wrap">
-                            {(authUser && authUser.userId === course.courseUser.id) ? (
+                            {(authUser && authUser.id === course.courseUser.id) ? (
                                 <>
-                                    <Link className="button" to={`/courses/${course.id}/update`}>Update Course</Link>
+                                    <Link className="button" to={`/courses/${courseId.id}/update`}>Update Course</Link>
                                     <Link className="button" onClick={handleDelete}>Delete Course</Link>
                                 </>
                             ) : null
