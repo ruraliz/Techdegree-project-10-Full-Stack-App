@@ -29,6 +29,7 @@ function App() {
             <Route path="/courses/:id/update" element={<UpdateCourse />} />
           </Route>
           <Route path="error" element={<UnhandledError />} />
+          <Route path="notfound" element={<NotFound />} />
           <Route path="forbidden" element={<Forbidden />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

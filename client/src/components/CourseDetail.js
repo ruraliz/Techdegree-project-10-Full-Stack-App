@@ -16,7 +16,7 @@ const CourseDetail = () => {
                 const response = await axios.get(`http://localhost:5000/api/courses/${courseId.id}`)
                 const fetchCourse = response.data
                 if (!fetchCourse) {
-                    navigate("*")
+                    navigate("/notfound")
                 } else {
                     setCourse(fetchCourse)
                 }
