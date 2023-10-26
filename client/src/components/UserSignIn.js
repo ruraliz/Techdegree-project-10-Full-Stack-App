@@ -26,7 +26,7 @@ const UserSignIn = () => {
       emailAddress: emailAddress.current.value,
       password: password.current.value
     };
-
+console.log(emailAddress)
     try {
       const user = await actions.signIn(credentials);
       if (user) {
